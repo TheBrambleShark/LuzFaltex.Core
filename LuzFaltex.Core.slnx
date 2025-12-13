@@ -11,6 +11,7 @@
     <Project Path="src/LuzFaltex.Core.Analyzers/LuzFaltex.Core.Analyzers.csproj" />
     <Project Path="src/LuzFaltex.Core.Configuration/LuzFaltex.Core.Configuration.csproj" />
     <Project Path="src/LuzFaltex.Core.Numerics/LuzFaltex.Core.Numerics.csproj" />
+    <Project Path="src\LuzFaltex.Core.Collections\LuzFaltex.Core.Collections.csproj" Type="Classic C#" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/LuzFaltex.Core.Analyzers.Tests/LuzFaltex.Core.Analyzers.Tests.csproj" />

@@ -25,8 +25,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-using static LuzFaltex.Core.Collections.MultiValueDictionary.MultiValueDictionary.MultiValueDictionary;
-
 namespace LuzFaltex.Core.Collections
 {
     public partial class MultiValueDictionary<TKey, TValue> where TKey : notnull

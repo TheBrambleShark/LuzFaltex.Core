@@ -26,9 +26,9 @@ using System.Diagnostics;
 
 #pragma warning disable SA1600 // Elements must be documented. Only exposed internally.
 
-namespace LuzFaltex.Core.Collections.MultiValueDictionary
+namespace LuzFaltex.Core.Collections
 {
-    public partial class MultiValueDictionary
+    public partial class MultiValueDictionary<TKey, TValue> where TKey : notnull
     {
         internal sealed class MultiValueDictionaryDebugView<TKey, TValue>(IDictionary<TKey, IReadOnlyCollection<TValue>> dictionary)
             where TKey : notnull

@@ -1,6 +1,8 @@
 # Copied from Immediate.Handlers by viceroypenguin
 
 name: Release
+permissions:
+  contents: read
 
 on:
   workflow_dispatch:

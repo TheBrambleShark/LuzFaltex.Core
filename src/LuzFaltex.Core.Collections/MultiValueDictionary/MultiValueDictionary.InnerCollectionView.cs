@@ -25,8 +25,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-using static LuzFaltex.Core.Collections.MultiValueDictionary.MultiValueDictionary.MultiValueDictionary;
-
 namespace LuzFaltex.Core.Collections
 {
     public partial class MultiValueDictionary<TKey, TValue> where TKey : notnull
@@ -39,7 +37,7 @@ namespace LuzFaltex.Core.Collections
         /// </remarks>
         /// <param name="key">The key for this value.</param>
         /// <param name="collection">A collection of values.</param>
-        [DebuggerTypeProxy(typeof(MultiValueDictionaryValueCollectionDebugView<,>))]
+        [DebuggerTypeProxy(typeof(MultiValueDictionary<,>.MultiValueDictionaryValueCollectionDebugView))]
         [DebuggerDisplay("Key = {Key}, Count = {Count}")]
         private sealed class InnerCollectionView(TKey key, ICollection<TValue> collection)
             : ICollection<TValue>,

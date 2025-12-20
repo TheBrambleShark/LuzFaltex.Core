@@ -21,14 +21,11 @@
 //
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using LuzFaltex.Core.Collections;
-using LuzFaltex.Core.Collections.Tests.MultiValueDictionary;
 
 #pragma warning disable SA1600 // Elements must be documented
 
-namespace Applications.Core.Common.Tests.Collections
+namespace LuzFaltex.Core.Collections.Tests
 {
     public sealed partial class MultiValueDictionaryTests : MultiValueDictionaryTestBase
     {
@@ -41,7 +38,7 @@ namespace Applications.Core.Common.Tests.Collections
             /// Gets the name of the Create method.
             /// </summary>
             // See https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/unbound-generic-types-in-nameof
-            public const string Create = nameof(MultiValueDictionary<int, int>.Create);
+            public const string Create = nameof(MultiValueDictionary<,>.Create);
 
             /// <summary>
             /// Gets the testable types.

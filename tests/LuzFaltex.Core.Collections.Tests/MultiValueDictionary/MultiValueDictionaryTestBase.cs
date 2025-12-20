@@ -25,7 +25,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
-namespace LuzFaltex.Core.Collections.Tests.MultiValueDictionary
+namespace LuzFaltex.Core.Collections.Tests
 {
     /// <summary>
     /// Provides a set of utilities for <see cref="MultiValueDictionary{TKey, TValue}"/> tests.

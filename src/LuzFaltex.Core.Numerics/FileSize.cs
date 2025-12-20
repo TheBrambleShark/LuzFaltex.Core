@@ -129,5 +129,17 @@ namespace LuzFaltex.Core.Numerics
         /// <param name="tebibytes">The number of tebibytes.</param>
         /// <returns>A new instance of <see cref="FileSize"/>.</returns>
         public static FileSize FromTebibytes(int tebibytes) => From((ulong)tebibytes * TebibyteBase);
+
+        private static Int128 NormalizeInput(Int128 input)
+        {
+            // todo: normalize (sanitize) your input;
+            return input;
+        }
+
+        private static Validation Validate(Int128 input)
+        {
+            bool isValid = true; // todo: your validation
+            return isValid ? Validation.Ok : Validation.Invalid("[todo: describe the validation]");
+        }
     }
 }

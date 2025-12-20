@@ -26,8 +26,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
-using static LuzFaltex.Core.Collections.MultiValueDictionary.MultiValueDictionary;
-
 namespace LuzFaltex.Core.Collections
 {
     /// <summary>
@@ -44,7 +42,7 @@ namespace LuzFaltex.Core.Collections
     /// </summary>
     /// <typeparam name="TKey">The type of the key.</typeparam>
     /// <typeparam name="TValue">The type of the value.</typeparam>
-    [DebuggerTypeProxy(typeof(MultiValueDictionaryDebugView<,>))]
+    [DebuggerTypeProxy(typeof(MultiValueDictionary<,>.MultiValueDictionaryDebugView))]
     [DebuggerDisplay("Count = {Count}")]
     [Serializable]
     public partial class MultiValueDictionary<TKey, TValue>
@@ -130,14 +128,7 @@ namespace LuzFaltex.Core.Collections
         /// <exception cref="ArgumentOutOfRangeException">Capacity must be >= 0.</exception>
         public MultiValueDictionary(int capacity, IEqualityComparer<TKey>? comparer)
         {
-#if NET8_0_OR_GREATER
             ArgumentOutOfRangeException.ThrowIfNegative(capacity);
-#else
-            if (capacity < 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(capacity), "Value must be a positive number.");
-            }
-#endif
             _dictionary = new(capacity, comparer);
         }
 

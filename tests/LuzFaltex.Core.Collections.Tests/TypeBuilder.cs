@@ -25,7 +25,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
-using Unit = Applications.Core.Common.Tests.Collections.MultiValueDictionaryTests.NullKeyTests.Unit;
+using Unit = LuzFaltex.Core.Collections.Tests.MultiValueDictionaryTests.NullKeyTests.Unit;
 
 namespace LuzFaltex.Core.Collections.Tests
 {

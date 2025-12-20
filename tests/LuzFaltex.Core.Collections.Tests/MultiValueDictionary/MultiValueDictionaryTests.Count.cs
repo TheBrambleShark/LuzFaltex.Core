@@ -22,12 +22,10 @@
 
 using System;
 using System.Collections.Generic;
-using Applications.Core.Common.Collections;
-using LuzFaltex.Collections.Generic.Tests;
 
 #pragma warning disable SA1600 // Elements must be documented
 
-namespace Applications.Core.Common.Tests.Collections
+namespace LuzFaltex.Core.Collections.Tests
 {
     public partial class MultiValueDictionaryTests
     {

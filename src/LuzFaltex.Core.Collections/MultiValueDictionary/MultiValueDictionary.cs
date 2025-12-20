@@ -42,7 +42,7 @@ namespace LuzFaltex.Core.Collections
     /// </summary>
     /// <typeparam name="TKey">The type of the key.</typeparam>
     /// <typeparam name="TValue">The type of the value.</typeparam>
-    [DebuggerTypeProxy(typeof(MultiValueDictionaryDebugView<,>))]
+    [DebuggerTypeProxy(typeof(MultiValueDictionary<,>.MultiValueDictionaryDebugView))]
     [DebuggerDisplay("Count = {Count}")]
     [Serializable]
     public partial class MultiValueDictionary<TKey, TValue>

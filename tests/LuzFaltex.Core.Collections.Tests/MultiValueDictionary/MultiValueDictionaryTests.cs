@@ -38,7 +38,7 @@ namespace LuzFaltex.Core.Collections.Tests
             /// Gets the name of the Create method.
             /// </summary>
             // See https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/unbound-generic-types-in-nameof
-            public const string Create = nameof(MultiValueDictionary<int, int>.Create);
+            public const string Create = nameof(MultiValueDictionary<,>.Create);
 
             /// <summary>
             /// Gets the testable types.

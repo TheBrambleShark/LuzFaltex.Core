@@ -37,7 +37,7 @@ namespace LuzFaltex.Core.Collections
         /// </remarks>
         /// <param name="key">The key for this value.</param>
         /// <param name="collection">A collection of values.</param>
-        [DebuggerTypeProxy(typeof(MultiValueDictionaryValueCollectionDebugView<,>))]
+        [DebuggerTypeProxy(typeof(MultiValueDictionary<,>.MultiValueDictionaryValueCollectionDebugView))]
         [DebuggerDisplay("Key = {Key}, Count = {Count}")]
         private sealed class InnerCollectionView(TKey key, ICollection<TValue> collection)
             : ICollection<TValue>,

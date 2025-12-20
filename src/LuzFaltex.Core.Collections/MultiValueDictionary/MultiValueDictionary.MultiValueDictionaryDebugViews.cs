@@ -30,29 +30,28 @@ namespace LuzFaltex.Core.Collections
 {
     public partial class MultiValueDictionary<TKey, TValue> where TKey : notnull
     {
-        internal sealed class MultiValueDictionaryDebugView<TKey, TValue>(IDictionary<TKey, IReadOnlyCollection<TValue>> dictionary)
-            where TKey : notnull
+        internal sealed class MultiValueDictionaryDebugView(IDictionary<TKey, IReadOnlyCollection<TValue>> dictionary)
         {
             private readonly IDictionary<TKey, IReadOnlyCollection<TValue>> _dictionary = dictionary ?? throw new ArgumentNullException(nameof(dictionary));
 
             [DebuggerBrowsable(DebuggerBrowsableState.RootHidden)]
-            public DebugViewMultiValueDictionaryItem<TKey, TValue>[] Items
+            public DebugViewMultiValueDictionaryItem[] Items
             {
                 get
                 {
                     var keyValuePairs = new KeyValuePair<TKey, IReadOnlyCollection<TValue>>[_dictionary.Count];
                     _dictionary.CopyTo(keyValuePairs, 0);
-                    var items = new DebugViewMultiValueDictionaryItem<TKey, TValue>[keyValuePairs.Length];
+                    var items = new DebugViewMultiValueDictionaryItem[keyValuePairs.Length];
                     for (int i = 0; i < items.Length; i++)
                     {
-                        items[i] = new DebugViewMultiValueDictionaryItem<TKey, TValue>(keyValuePairs[i]);
+                        items[i] = new DebugViewMultiValueDictionaryItem(keyValuePairs[i]);
                     }
                     return items;
                 }
             }
         }
 
-        internal readonly struct DebugViewMultiValueDictionaryItem<TKey, TValue>(TKey key, IReadOnlyCollection<TValue> values)
+        internal readonly struct DebugViewMultiValueDictionaryItem(TKey key, IReadOnlyCollection<TValue> values)
         {
             [DebuggerBrowsable(DebuggerBrowsableState.Collapsed)]
             public TKey Key { get; } = key;
@@ -66,7 +65,7 @@ namespace LuzFaltex.Core.Collections
             }
         }
 
-        internal sealed class MultiValueDictionaryValueCollectionDebugView<TKey, TValue>(ICollection<TValue> collection)
+        internal sealed class MultiValueDictionaryValueCollectionDebugView(ICollection<TValue> collection)
         {
             private readonly ICollection<TValue> _collection = collection ?? throw new ArgumentNullException(nameof(collection));
 

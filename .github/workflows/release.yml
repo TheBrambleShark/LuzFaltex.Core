@@ -1,0 +1,48 @@
+# Copied from Immediate.Handlers by viceroypenguin
+
+name: Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+  
+jobs:
+  release:
+    permissions:
+      id-token: write # Enable GitHub IODC token issuance
+      contents: write # Eanble GitHub releases
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: |
+            10.0.x
+      
+      - name: Restore Dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build -c Release --no-restore
+
+      - name: Package
+        run: dotnet pack -c Release --no-build --property:PackageOutputPath=../../nupkgs
+
+      - name: NuGet Login
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: foxtrek_64
+        
+      - name: Push to Nuget
+        run: dotnet nuget push "./nupkgs/*.nupkg" --source "https://api.nuget.org/v3/index.json" --api-key ${{ steps.login.outputs.NUGET_API_KEY }}
+      
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with:
+          generateReleaseNotes: 'true'
+          makeLatest: 'true'
